@@ -18,6 +18,9 @@ void keyboard_print(const char* str){
 		hog_set_keyboard_input(&key_report);
 		k_msleep(100);
 	}
+	
+	key_report.keycode[5] = 0;
+	hog_set_keyboard_input(&key_report);	
 }
 
 int ascii_to_hid(uint8_t ascii)
